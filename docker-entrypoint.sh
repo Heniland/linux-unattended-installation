@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-readonly VERSION=${1:-18.04}
-exec /ubuntu/${VERSION}/build-iso.sh "$HOME/.ssh/id_rsa.pub" "/iso/ubuntu-${VERSION}-netboot-amd64-unattended.iso"
+readonly VERSION=${1:-20.04}
+exec /ubuntu/${VERSION}/build-iso.sh "/ubuntu/ssh_id.pub" "/iso/ubuntu-${VERSION}-amd64-unattended.iso"
