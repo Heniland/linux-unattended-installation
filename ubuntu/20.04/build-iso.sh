@@ -38,7 +38,10 @@ patch -p1 -i "$SCRIPT_DIR/custom/boot-menu.patch"
 # prepare assets
 cd "$TMP_INITRD_DIR"
 mkdir "./custom"
-cp "$SCRIPT_DIR/custom/preseed.cfg" "./preseed.cfg"
+#TODO fix preseed
+#cp "$SCRIPT_DIR/custom/preseed.cfg" "./preseed.cfg"
+cp "$SCRIPT_DIR/custom/ubuntu-master.seed" "$TMP_DISC_DIR/preseed/ubuntu-master.seed"
+cp "$SCRIPT_DIR/custom/ubuntu-server.seed" "$TMP_DISC_DIR/preseed/ubuntu-server.seed"
 cp "$SSH_PUBLIC_KEY_FILE" "./custom/userkey.pub"
 cp "$SCRIPT_DIR/custom/ssh-host-keygen.service" "./custom/ssh-host-keygen.service"
 
