@@ -1,0 +1,26 @@
+--- boot/grub/grub.cfg	2021-06-06 15:51:33.308835096 +0300
++++ custom/boot/grub/grub.cfg	2021-06-06 15:51:29.796677973 +0300
+@@ -16,19 +16,14 @@
+ 	linux	/install/vmlinuz  file=/cdrom/preseed/ubuntu-server.seed quiet ---
+ 	initrd	/install/initrd.gz
+ }
+-menuentry "OEM install (for manufacturers)" {
++menuentry "Install Seedx Master Server" {
+ 	set gfxpayload=keep
+-	linux	/install/vmlinuz  file=/cdrom/preseed/ubuntu-server.seed quiet oem-config/enable=true ---
++	linux	/install/vmlinuz  file=/cdrom/preseed/ubuntu-master.seed quiet ---
+ 	initrd	/install/initrd.gz
+ }
+-menuentry "Check disc for defects" {
++menuentry "Install Seedx Decider Server" {
+ 	set gfxpayload=keep
+-	linux	/install/vmlinuz  MENU=/bin/cdrom-checker-menu quiet ---
+-	initrd	/install/initrd.gz
+-}
+-menuentry "Rescue a broken system" {
+-	set gfxpayload=keep
+-	linux	/install/vmlinuz  rescue/enable=true ---
++	linux	/install/vmlinuz  file=/cdrom/preseed/ubuntu-decider.seed quiet ---
+ 	initrd	/install/initrd.gz
+ }
+ grub_platform
